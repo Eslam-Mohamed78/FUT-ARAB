@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin DashBoard</title>
+    <link rel="shortcut icon" href="./Assets/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100">
+    <nav
+      class="bg-white w-full flex gap-y-3 flex-row justify-between items-center py-4 px-1 sm:px-4 shadow"
+    >
+      <span class="text-white text-2xl cursor-pointer" onclick="openSidebar()">
+        <i class="bi bi-filter-left px-2 bg-blue-600 rounded-md"></i>
+      </span>
+
+      <h2 class="font-medium text-2xl text-blue-700 uppercase">Hello Shop</h2>
+
+      <div class="flex items-center justify-between gap-2 sm:gap-3">
+        <button
+          class="bg-blue-700 text-white font-medium rounded-[5px] px-2 py-1"
+        >
+          + <span class="hidden sm:inline-block"> Add</span>
+        </button>
+        <div class="flex flex-col sm:flex-row">
+          <span class="font-medium">Balance: </span> <span>600$</span>
+        </div>
+
+        <img
+          src="./Assets/profilePicture.jpg"
+          alt="profile picture"
+          class="w-[35px] border-2 border-blue-400 rounded-full p-1 cursor-pointer"
+        />
+      </div>
+    </nav>
+
+    <main class="mt-10 container px-5 mx-auto overflow-x-scroll sm:overflow-hidden">
+      <h2
+        class="font-medium text-2xl text-gray-600 ml-3 mb-5 text-center sm:text-left w-full"
+      >
+        Buy Coins
+        <i class="bi bi-currency-bitcoin"></i>
+      </h2>
+
+      <div class="text-center sm:text-right w-full">
+        <span class="font-semibold text-gray-500">Search: </span>
+        <input
+          type="text"
+          class="rounded outline-none px-2 py-1 ml-2 border"
+          name="search"
+          placeholder="search coins"
+        />
+      </div>
+
+      <table
+        class="table-auto cursor-pointer w-full border-separate border-spacing-y-3 bg-white mx-4 sm:mx-0 mt-5 mb-[30px] sm:mb-5 p-4 rounded-lg shadow-lg"
+      >
+        <thead>
+          <tr>
+            <th>
+              <div class="flex items-center gap-1 text-gray-500 font-medium">
+                <i class="bi bi-playstation text-blue-700 hidden sm:block"></i>
+                <i class="bi bi-xbox text-green-600 hidden sm:block"></i>
+                <span>Stock</span>
+                <span class="hidden sm:flex sm:flex-col mb-1">
+                  <i class="bi bi-caret-up-fill h-[8px] text-[10px]"></i>
+                  <i class="bi bi-caret-down-fill h-[8px] text-[10px]"></i>
+                </span>
+              </div>
+            </th>
+
+            <th>
+              <div class="flex items-center gap-1 text-gray-500 font-medium">
+                <i class="bi bi-playstation text-blue-700 hidden sm:block"></i>
+                <i class="bi bi-xbox text-green-600 hidden sm:block"></i>
+                <span>Price</span>
+                <span class="hidden sm:flex sm:flex-col mb-1">
+                  <i class="bi bi-caret-up-fill h-[8px] text-[10px]"></i>
+                  <i class="bi bi-caret-down-fill h-[8px] text-[10px]"></i>
+                </span>
+              </div>
+            </th>
+
+            <th>
+              <div class="flex items-center gap-1 text-gray-500 font-medium">
+                <span>Largest</span>
+                <span class="hidden sm:flex sm:flex-col mb-1">
+                  <i class="bi bi-caret-up-fill h-[8px] text-[10px]"></i>
+                  <i class="bi bi-caret-down-fill h-[8px] text-[10px]"></i>
+                </span>
+              </div>
+            </th>
+
+            <th>
+              <div class="flex items-center gap-1 text-gray-500 font-medium">
+                <span>Avg</span>
+                <span class="hidden sm:flex sm:flex-col mb-1">
+                  <i class="bi bi-caret-up-fill h-[8px] text-[10px]"></i>
+                  <i class="bi bi-caret-down-fill h-[8px] text-[10px]"></i>
+                </span>
+              </div>
+            </th>
+
+            <th>
+              <div class="flex items-center gap-1 text-gray-500 font-medium">
+                <i class="bi bi-display-fill text-blue-600 hidden sm:block"></i>
+                <span>Stock</span>
+                <span class="hidden sm:flex sm:flex-col mb-1">
+                  <i class="bi bi-caret-up-fill h-[8px] text-[10px]"></i>
+                  <i class="bi bi-caret-down-fill h-[8px] text-[10px]"></i>
+                </span>
+              </div>
+            </th>
+
+            <th>
+              <div class="flex items-center gap-1 text-gray-500 font-medium">
+                <i class="bi bi-display-fill text-blue-600 hidden sm:block"></i>
+                <span>Price</span>
+                <span class="hidden sm:flex sm:flex-col mb-1">
+                  <i class="bi bi-caret-up-fill h-[8px] text-[10px]"></i>
+                  <i class="bi bi-caret-down-fill h-[8px] text-[10px]"></i>
+                </span>
+              </div>
+            </th>
+
+            <th>
+              <div class="flex items-center gap-1 text-gray-500 font-medium">
+                <span>Largest</span>
+                <span class="hidden sm:flex sm:flex-col mb-1">
+                  <i class="bi bi-caret-up-fill h-[8px] text-[10px]"></i>
+                  <i class="bi bi-caret-down-fill h-[8px] text-[10px]"></i>
+                </span>
+              </div>
+            </th>
+
+            <th>
+              <div class="flex items-center gap-1 text-gray-500 font-medium">
+                <span>Avg</span>
+                <span class="hidden sm:flex sm:flex-col mb-1">
+                  <i class="bi bi-caret-up-fill h-[8px] text-[10px]"></i>
+                  <i class="bi bi-caret-down-fill h-[8px] text-[10px]"></i>
+                </span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="font-medium text-gray-700">
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="flex items-center border-b border-steal-100 p-2">
+              <i
+                class="bi bi-plus bg-blue-800 inline-block text-white w-[17px] h-[17px] rounded-full flex justify-center items-center mr-2"
+              ></i>
+              0 k
+            </td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">0 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">14.75 $</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+            <td class="border-b border-steal-100 p-2">540 k</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr class="text-sm text-gray-400 font-medium">
+            <td colspan="5">Showing 1 to 4 of 4 entries</td>
+            <td colspan="3">
+              <ul class="flex gap-2 items-center justify-end">
+                <li
+                  class="hover:bg-blue-500 hover:text-white hover:border-0 transition border border-blue-300 rounded-full w-[30px] h-[30px] flex justify-center items-center"
+                >
+                  <i class="bi bi-chevron-left"></i>
+                </li>
+                <li
+                  class="hover:bg-blue-500 hover:text-white hover:border-0 transition border border-blue-300 rounded-full w-[30px] h-[30px] flex justify-center items-center"
+                >
+                  1
+                </li>
+                <li
+                  class="hover:border hover:bg-blue-500 hover:text-white transition rounded-full w-[30px] h-[30px] flex justify-center items-center"
+                >
+                  2
+                </li>
+                <li
+                  class="hover:border hover:bg-blue-500 hover:text-white transition rounded-full w-[30px] h-[30px] flex justify-center items-center"
+                >
+                  3
+                </li>
+                <li
+                  class="hover:border hover:bg-blue-500 hover:text-white transition rounded-full w-[30px] h-[30px] flex justify-center items-center"
+                >
+                  4
+                </li>
+                <li
+                  class="hover:bg-blue-500 hover:text-white hover:border-0 transition border border-blue-300 rounded-full w-[30px] h-[30px] flex justify-center items-center"
+                >
+                  <i class="bi bi-chevron-right"></i>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
+
+    <aside
+      class="hidden sidebar fixed top-0 bottom-0 lg:left-0 py-2 px-3 w-[230px] overflow-y-auto text-center bg-blue-800"
+    >
+      <div class="text-gray-100 text-2xl mb-10">
+        <div class="text-right">
+          <i class="bi bi-x cursor-pointer" onclick="openSidebar()"></i>
+        </div>
+
+        <div class="p mt-1 flex items-center justify-center">
+          <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
+          <h1 class="font-bold text-gray-200 uppercase ml-3">fut arab</h1>
+        </div>
+      </div>
+
+      <button
+        class="w-full p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        onclick="dropdown('coins', 'arrow-coins')"
+      >
+        <i class="bi bi-currency-bitcoin"></i>
+        <div class="flex justify-between w-full items-center">
+          <span class="text-[15px] ml-4 text-gray-200 font-bold"
+            >Buy Coins</span
+          >
+          <span class="text-sm">
+            <i class="bi bi-chevron-right" id="arrow-coins"></i>
+          </span>
+        </div>
+      </button>
+
+      <div
+        class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden"
+        id="coins"
+      >
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Coin One
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Coin Two
+        </h1>
+      </div>
+
+      <button
+        class="w-full p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        onclick="dropdown('orders', 'arrow-orders')"
+      >
+        <i class="bi bi-bookmark-fill"></i>
+
+        <div class="flex justify-between w-full items-center">
+          <span class="text-[15px] ml-4 text-gray-200 font-bold"
+            >Orders List</span
+          >
+          <span class="text-sm">
+            <i class="bi bi-chevron-right" id="arrow-orders"></i>
+          </span>
+        </div>
+      </button>
+
+      <div
+        class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden"
+        id="orders"
+      >
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Order One
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Order Two
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Order Three
+        </h1>
+      </div>
+
+      <button
+        class="w-full p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        onclick="dropdown('balance', 'arrow-balance')"
+      >
+        <i class="bi bi-coin"></i>
+        <div class="flex justify-between w-full items-center">
+          <span class="text-[15px] ml-4 text-gray-200 font-bold">Balance</span>
+          <span class="text-sm">
+            <i class="bi bi-chevron-right" id="arrow-balance"></i>
+          </span>
+        </div>
+      </button>
+
+      <div
+        class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden"
+        id="balance"
+      >
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Balance One
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Balance Two
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Balance Three
+        </h1>
+      </div>
+
+      <button
+        class="w-full p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        onclick="dropdown('tutorials', 'arrow-tutorials')"
+      >
+        <i class="bi bi-youtube"></i>
+        <div class="flex justify-between w-full items-center">
+          <span class="text-[15px] ml-4 text-gray-200 font-bold"
+            >Tutorials</span
+          >
+          <span class="text-sm">
+            <i class="bi bi-chevron-right" id="arrow-tutorials"></i>
+          </span>
+        </div>
+      </button>
+
+      <div
+        class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden"
+        id="tutorials"
+      >
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Tutorial One
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Tutorial Two
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Tutorial Three
+        </h1>
+      </div>
+
+      <button
+        class="w-full p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        onclick="dropdown('settings', 'arrow-settings')"
+      >
+        <i class="bi bi-gear"></i>
+        <div class="flex justify-between w-full items-center">
+          <span class="text-[15px] ml-4 text-gray-200 font-bold">Settings</span>
+          <span class="text-sm">
+            <i class="bi bi-chevron-right" id="arrow-settings"></i>
+          </span>
+        </div>
+      </button>
+
+      <div
+        class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 hidden"
+        id="settings"
+      >
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Setting One
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Setting Two
+        </h1>
+        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+          Setting Three
+        </h1>
+      </div>
+    </aside>
+
+    <script type="text/javascript">
+      function dropdown(menuId, arrowId) {
+        const menuElement = document.querySelector(`#${menuId}`);
+        const arrowElement = document.querySelector(`#${arrowId}`);
+
+        menuElement.classList.toggle("hidden");
+
+        if (arrowElement.classList.contains("bi-chevron-right")) {
+          arrowElement.classList.remove("bi-chevron-right");
+          arrowElement.classList.add("bi-chevron-down");
+        } else {
+          arrowElement.classList.remove("bi-chevron-down");
+          arrowElement.classList.add("bi-chevron-right");
+        }
+      }
+
+      function openSidebar() {
+        document.querySelector(".sidebar").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
